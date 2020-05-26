@@ -18,7 +18,7 @@ router.get('/', function (req, res) {
 router.post('/addNewPost', function (req, res) {
   //Create new post
   Post.create({
-    name: req.body.name,
+    name: req.session.user.name,
     post: req.body.post
   },
     function (err, post) {
