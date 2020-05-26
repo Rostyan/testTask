@@ -4,6 +4,7 @@ var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var bcrypt = require('bcryptjs');
 var config = require('../config/config'); // get config file
 
+
 var Post = require('../model/post');
 var User = require('../model/user')
 
@@ -18,7 +19,7 @@ router.get('/', function (req, res) {
 router.post('/addNewPost', function (req, res) {
   //Create new post
   Post.create({
-    name: req.session.user.name,
+    name: req.body.name,
     post: req.body.post
   },
     function (err, post) {

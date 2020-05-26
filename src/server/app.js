@@ -9,10 +9,9 @@ const mongoose = require("mongoose");
 
 let app = express();
 
-
 const mongoConnectionString = require('./config/mongo_url');
 
-mongoose.connect(mongoConnectionString, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(mongoConnectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
